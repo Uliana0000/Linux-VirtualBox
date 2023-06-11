@@ -1,0 +1,23 @@
+abc = ("а б в г д е ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я").split()
+ABC = ('А Б В Г Д Е Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я').split()
+ss=str(input('Введите строку: '))
+kol=int(input('Ведите шаг:'))
+for i in ss:
+    if abc.count(i)!=0:
+        if i=='я':
+            a=abc[koln-1]
+            ss=ss.replace(i, a) 
+        else:
+            a=abc.index(i)
+            b=abc[a+kol]
+            ss=ss.replace(i, b) 
+    elif ABC.count(i)!=0:
+        if i=='Я':
+            a=ABC[kol-1]
+            ss=ss.replace(i, a)
+        else:
+            a=ABC.index(i)
+            b=ABC[a+kol]
+            ss=ss.replace(i, b)
+        
+print(ss)

@@ -1,0 +1,28 @@
+import random
+
+def encrypt(message, key):
+    message0 = ""
+    for i in range(len(message)):
+        m_char = ord(message[i])
+        key_char = ord(key[i])
+        end_char = m_char ^ key_char
+        message0 += chr(end_char)
+    return message0
+
+def decrypt(message0, key):
+    message1 = ""
+    for i in range(len(message0)):
+        end_char = ord(message0[i])
+        key_char = ord(key[i])
+        dec_char = end_char ^ key_char
+        message1 += chr(dec_char)
+    return message1
+
+s=input('Введите сообщение: ')
+key = ""
+for i in range(len(s)):
+    key += chr(random.randint(0, 255))
+message0 = encrypt(s, key)
+message1 = decrypt(message0, key)
+print("Зашифрованное сообщение: ", message0)
+print("Расшифрованное сообщение: ", message1)
